@@ -13,3 +13,4 @@
       tasks:
         <<: *api_info
         state: query
+        delegate_to: localhost
