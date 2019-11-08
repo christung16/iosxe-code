@@ -1,0 +1,16 @@
+---
+- name: Testing
+  hosts: localhost
+  gather_facts: no
+  vars:
+    api_info: &api_info
+      hosts: 10.4.255.5
+      username: admin
+      password: C1sc0123
+      validate_certs: no
+
+    - name: query tenants
+      tasks:
+        <<: *api_info
+        state: query
+        delegate_to: localhost
